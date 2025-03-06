@@ -2,34 +2,77 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 
 <title>Formulier erfbelasting 2025</title>
 
 <body>
     <div class="banner">
-        <p><strong>Dit is niet een officieel formulier, maar een schoolproject!</strong></p>
+        <p><strong>Let op: Dit is niet een officieel formulier, maar een schoolproject!</strong></p>
     </div>
     <header>
-        
-        <h1>Aangifte 2025</h1>
+        <img src="Afbeeldingen/Logo-geen-achtergrond.png" alt="NS-logo">
+        <h1>Aangifte 2025 erfbelasting</h1>
     </header>
 
-    <main>
-    <section>
+<main>
+
+    <form action=""> 
     <fieldset>
-    <legend>Gegevens van de overledene</legend>
-        <ul>
-            <li>Voorletters<label><input type="tekst"></label></li>
-            <li>Tussenvoegsel<label><input type="tekst"></label></li>
-            <li>Achternaam<label><input type="tekst"></label></li>
-            <li>Burgerservicenummer<label><input type="number" maxlength="9" id="BSN"></label></li>
-            <li>Overlijdingsdatum<label><input type="date"></label></li>
-        </ul>
+        <legend>Gegevens van overledene</legend>
+
+            <label><span>Voorletters</span>
+            <input type="text" required></label>
+            <label><span>Tussenvoegsel</span>
+            <input type="text" placeholder="Optioneel"></label>
+            <label><span>Achternaam</span>
+            <input type="text" required></label>
+            <label><span>Burgerservicenummer(BSN)</span>
+            <input type="number" min="10000000" max="999999999" required inputmode="numeric"></label>
+            <label><span>Overlijdingsdatum</span>
+            <input type="date" required></label>
+<!-- Min= en max= van chatgpt -->
+  
+        <label><span>Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van overlijden?</span></label>
+
+          <div id="radio-button">
+            <label><input type="radio" name="partner" id="yes">Ja</label>
+            <label><input type="radio" name="partner" id="no">Nee</label>
+          </div>
     </fieldset>
-    </section>
+
+    <fieldset id="hidden">
+        <legend>Partner of echtgenoot</legend>
+        <label>Hadden de overledene en diens echtgenoot of
+        geregistreerd partner huwelijkse of partner schaps-
+        voorwaarden laten vastleggen in een notariële akte? Voer dan hieronder dat bestand in.</label>
+
+        <label for="invoer-akte" id="invoer-akte-label">selecteer bestand</label><input type="file" id="invoer-akte"></label>
+       </div> 
+
+        <label>Hadden de overledene en diens echtgenoot of
+        geregistreerd partner huwelijkse of partner schaps-
+        voorwaarden laten vastleggen in een notariële akte?</label>
+
+       <div id="radio-button"> 
+        <label><input type="radio" name="voorwaarden">Ja</label>
+        <label><input type="radio" name="voorwaarden">Nee</label>
+       </div> 
+    </fieldset>
+
+    <div>
+    <button type="submit">Volgende</button>
+    </div>
+</form>
+  
+</main>
     </main>
 </body>
+
+<!--:invalid, :user-invalid 
+placeholders,huisstijl erin, focus op goeie html
+-->
+
+<!-- https://codepen.io/vasilisvg/pen/wBvdqNB?editors=1100 -->
+ <!-- https://codepen.io/krijnhoetmer/pen/ogvqVyj?editors=1100 -->

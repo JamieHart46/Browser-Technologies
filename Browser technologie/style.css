@@ -1,48 +1,195 @@
 :root {
-    color: #003082 ;
-    padding: 0;
+    --yellow: #FFC917;
+    --blue: #003082;     
+    --light-blue: #0063D3;
+    --white: #FFFFFF;
+    --background-Grey: #E6E6E9;
+}
+
+body {
+    background-color: var(--background-Grey);
+
     margin: 0;
 }
 
 .banner {
+    background-color: var(--white);
+
     display: flex;
     justify-content: center;
 
+    font-size: 1.875rem;
 }
 
 .banner p {
     font-size: 20px;
+
     margin: 0;
 }
 
-header {
-    background-color: #FFC917;
-}
+/* Styling header */
 
-main {
-    max-width: 1200px;
+header {
+    display: flex;
+    align-items: center;
+
+    background-color: var(--yellow);
+    max-height: fit-content;
+
+    color:var(--blue);
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 40px;
     padding: 0;
     margin: 0;
 }
 
-ul {
+img {
+    max-height:30px;
+    width: auto;  
+
+    Padding: 0.5em;
+}
+
+
+/* Styling inhoud & forms */
+
+main {    
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+
+form {
+    grid-column-start: 2;
+
+    box-shadow: 0 .25rem 0 0 rgba(7, 7, 33, .15);
+    margin-bottom: 1em;
+}
+
+fieldset {
+  background-color: var(--white);
+  box-shadow: 0 .25rem 0 0 rgba(7, 7, 33, .15);
+
+  border:0;
+  padding: 1em 0;
+  margin-top: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+legend {
+    display: block;
+    box-sizing: border-box;
+    font-size: 1.875em;
+    background-color: var(--white);
+    width: 100%;
+
+    padding-top: 0.25em;
+    padding-inline: 0;
+    padding-left: 0.5em;
+}
+
+label {
+    display: flex; /* Use flexbox to make sure the elements are aligned and take up full width */
+    flex-direction: column; /* Stack the text (span) and the input vertically */
+    margin: 0; 
+    font-size: 1rem;
+    
+    max-width: 80%;
+    padding-top: 0.5em;
+    padding-left: 1em;
+}
+
+div label {
+    display: flex;
+    flex-direction: row;
+    max-width: 2em;
+}
+
+span { 
+  margin-left: 1em; 
+}
+
+/* Styling input & buttons */
+
+input {
+    max-width: 100%;
     padding: 0;
-    margin: 0;
+    margin-left: 1em;
 }
 
-li {
-    list-style: none;
-    padding-bottom: 10px;
-    padding-right: 50px;
-    margin: 0;
+button {
+    display: flex;
+    justify-self: center;
+
+    margin-bottom: 1em;
+    margin-right: 1em;
+
+    cursor: pointer;
+    background-color: var(--light-blue);
+    box-shadow: 0 .12rem 0  var(--blue);
+    color: var(--white);
+    padding: 1em 0.75em;
+
+    border: 0;
+    border-radius: 5%;
 }
 
-#BSN {
-    max-width: 9em;
+input[type="radio"] {
+    margin: 0;
+    
+}
+
+#radio-button {
+    padding-left: 0.5em;
+}
+
+form div {
+   background-color: var(--white);
+   padding: 0.5em 0; 
+
+   transition: 1s;
+}
+
+button:hover {
+    background-color: var(--blue);
+    box-shadow: 0 .12rem 0  var(--light-blue);
+    scale: 1.05;
+}
+
+#invoer-akte {
+    display: none;
+}
+
+#invoer-akte-label {
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--light-blue);
+    box-shadow: 0 .12rem 0  var(--blue);
+    color: var(--white);
+    padding: 0.75em 0;
+    margin: 1em;
+    max-width: 125px;
+
+    border: 0;
+    border-radius: 5%;
+}
+
+#invoer-akte-label:hover {
+    background-color: var(--blue);
+    box-shadow: 0 .12rem 0  var(--light-blue);
+    scale: 1.05;
+}
+
+
+/* Valid of invalid */
+
+input:user-invalid {
+	border: 2px solid red;
+}
+input:user-valid {
+	border: 2px solid limegreen;
 }
 
 /*https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number*/
