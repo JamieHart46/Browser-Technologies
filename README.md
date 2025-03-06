@@ -33,3 +33,6 @@ groen wordt om aan te geven dat het klopt.
 Tot slot is er een submit button toegevoegd die zal leiden tot het volgende deel van de vragenlijst. Die ik volgende week zal maken.
 En heb ik de pagina voor het grootste deel gestyled volgens de NS huisstijl en de CSS basis gelegd voor de rest van het formulier.
 
+
+Codepen oefeningen:
+https://codepen.io/collection/ZQQVaJ
