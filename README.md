@@ -13,3 +13,21 @@ voor postcode 4 getallen en 2 letters, etc.
 
 Ook om het gebruik makelijker te maken zijn er nog een paar andere dingen.
 - Bij bepaalde termen waarbij gebruikers misschien extra informatie nodig hebben, popups gebruiken om deze informatie te geven. 
+
+
+Week 2: Uitwerking eerste html.
+
+Ik heb de radio verbonden aan de tweede fieldset en vervolgens met JavaScript ervoor gezorgt dat pas als ja geselecteerd is de volgende
+relevante vragen tevoorschijn komen. En als de JavaScript niet werkt het tweede deel van de form standaard in beeld is.
+In de tweede html fieldset zijn de ja nee opties en vervangen met alleen een file inputtype voor degene waarvoor de label relevant is.
+En de file input gestyled in de NS stijl.
+<img src="" alt="foto-JS-voor-hidden">
+
+Daarnaast heb ik valid en invalid toegevoegd aan de outputs. Zodat wanneer wat er in de input gezet wordt niet past bij de pattern
+of de required in de input in html, de border rood wordt zodat het aangeeft welke input aangepast moet worden en als het wel valid is de border 
+groen wordt om aan te geven dat het klopt.
+<img src="" alt="foto-van-validatie-code">
+
+Tot slot is er een submit button toegevoegd die zal leiden tot het volgende deel van de vragenlijst. Die ik volgende week zal maken.
+En heb ik de pagina voor het grootste deel gestyled volgens de NS huisstijl en de CSS basis gelegd voor de rest van het formulier.
+
