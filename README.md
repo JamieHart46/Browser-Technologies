@@ -21,11 +21,13 @@ Ik heb de radio verbonden aan de tweede fieldset en vervolgens met JavaScript er
 relevante vragen tevoorschijn komen. En als de JavaScript niet werkt het tweede deel van de form standaard in beeld is.
 In de tweede html fieldset zijn de ja nee opties en vervangen met alleen een file inputtype voor degene waarvoor de label relevant is.
 En de file input gestyled in de NS stijl.
+
 <img src="Afbeeldingen/Javascript-hidden.png" alt="foto-JS-voor-hidden">
 
 Daarnaast heb ik valid en invalid toegevoegd aan de outputs. Zodat wanneer wat er in de input gezet wordt niet past bij de pattern
 of de required in de input in html, de border rood wordt zodat het aangeeft welke input aangepast moet worden en als het wel valid is de border 
 groen wordt om aan te geven dat het klopt.
+
 <img src="Afbeeldingen/Validatie-code.png" alt="foto-van-validatie-code">
 
 Tot slot is er een submit button toegevoegd die zal leiden tot het volgende deel van de vragenlijst. Die ik volgende week zal maken.
