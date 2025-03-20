@@ -71,3 +71,12 @@ Dan was er nog het probleem dat de fieldset niet automatisch opende als de de va
 <img src="Readme-afbeeldingen/Hidden-na-LS.png">
 
 De file input heeft een display: none; en user: valid of invalid werkt niet op de gestijlde label. 
+
+Ik had eerst niet door waarom local storage niet werkte als ik meer fieldset toevoegde, maar merkte snel dat het kwam omdat de inputs of geen name hadden, of dezelfde name als andere inputs, wat dan niet werkt.
+
+ik heb voor alle nieuwe fieldsets passend hidden toegepast zodat de fieldsets of sections alleen zichtbaar zijn als een bepaalde radio aangeklikt is. Bij alle fieldsets waar hidden toegepast is, als Javascript niet op de browser werkt, zullen ze gewoon zichtbaar zijn. Het hele formulier is dan zichtbaar. Het probleem wat dan komt, is dat de inputs die normaal verborgen zouden zijn voor mensen waarvoor ze niet relevant zijn, nu wel gedisplayed worden en dus ook required zijn als er dat in de html staat. Dus mensen kunnen dan niet verder met het formulier als zij deze gegevens niet invoeren, ook als zij deze gegevens niet hebben om te bieden.
+
+Er kan hier een instructie komen, dat zij n.v.t. moeten invullen als dit het geval is. Het zou ook met :has kunnnen, maar dan als het op een browser gebruikt wordt dat :has niet support loop je alsnog vast.
+Dus voor nu heb ik besloten om van een deel vand de inputs required weg te halen.
+
+Alles in het formulier werkt nu, ookal is het niet veel. Het is wel veel wat op heel veel nieuwe delen toegepast kan worden als er aan het formulier toegevoegd wordt.
