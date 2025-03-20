@@ -1,0 +1,317 @@
+:root {
+    --yellow: #FFC917;
+    --blue: #003082;     
+    --light-blue: #0063D3;
+    --white: #FFFFFF;
+    --light-grey: #E6E6E9;
+
+    --ns-font: 'nssans-regular.woff2', sans-serif;
+}
+
+
+/* accent-color in root */
+
+body {
+    background-color: var(--light-grey);
+
+    margin: 0;
+
+    font-family: var(--ns-font);
+}
+
+.banner {
+    background-color: var(--white);
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 1.875rem;
+}
+
+.banner p {
+    font-size: 20px;
+
+    margin: 0;
+}
+
+
+
+
+/* Styling header */
+
+header {
+    display: flex;
+    align-items: center;
+
+    background-color: var(--yellow);
+    min-height: 4em;
+
+    color:var(--blue);
+}
+
+h1 {
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-height:30px;
+    width: auto;  
+
+    Padding: 0.5em;
+}
+
+
+
+
+
+/* Styling inhoud & forms */
+
+main {    
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+
+form {
+    grid-column-start: 2;
+
+    box-shadow: 0 .25rem 0 0 rgba(7, 7, 33, .15);
+    margin-bottom: 1em;
+}
+
+fieldset {
+  background-color: var(--white);
+  box-shadow: 0 .25rem 0 0 rgba(7, 7, 33, .15);
+
+  border:0;
+  padding: 1em 0;
+  margin-top: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+legend {
+    display: block;
+    box-sizing: border-box;
+    font-size: 1.875em;
+    background-color: var(--white);
+    color: var(--blue);
+
+    width: 100%;
+
+    padding-top: 0.25em;
+    padding-inline: 0;
+    padding-left: 0.5em;
+}
+
+label {
+    display: flex; 
+    flex-direction: column; 
+
+    color: var(--blue);
+
+    margin: 0; 
+    font-size: 1rem;
+    
+    max-width: 80%;
+    padding-top: 0.5em;
+    padding-left: 1em;
+}
+
+span {
+    padding-top: 0.5em;
+}
+
+label label {
+    padding-top: 0.5em ;
+}
+
+div label {
+    display: flex;
+    flex-direction: row;
+    max-width: 3em;
+}
+
+#datepicker {
+    display: flex;
+    padding: 0;
+    padding-top: 0.2em;
+}
+
+#datepicker label {
+    padding: 0;
+    padding-right: 1em;
+}
+
+
+
+/* Styling input & buttons */
+
+input {
+    max-width: 100%;
+    height: 2em;
+    padding-left: 0.5em;
+
+    background-color: var(--light-grey);
+    border: 0;
+
+}
+
+.submit-knop {
+    display: flex;
+    justify-self: center;
+
+    margin-bottom: 1em;
+    margin-right: 1em;
+
+    cursor: pointer;
+    background-color: var(--light-blue);
+    box-shadow: 0 .12rem 0  var(--blue);
+    color: var(--white);
+    padding: 1em 0.75em;
+
+    border: 0;
+    border-radius: 5%;
+}
+
+input[type="radio"] {
+    margin: 0;
+
+    height: 1.3em;
+    
+}
+
+#radio-button {
+    display: flex;
+    align-items: center;
+
+    padding-left: 0.25em;
+    padding-top: .5em;
+
+}
+
+form div {
+   background-color: var(--white);
+   padding-bottom: 0.5em; 
+
+   transition: 1s;
+}
+
+.submit-knop {
+    box-shadow: 0 .25rem 0 0 rgba(7, 7, 33, .15);
+}
+
+.submit-knop:hover {
+    background-color: var(--blue);
+    box-shadow: 0 .12rem 0  var(--light-blue);
+    scale: 1.05;
+}
+
+#invoer-akte {
+    display: none;
+}
+
+#invoer-akte-label {
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--light-blue);
+    box-shadow: 0 .12rem 0  var(--blue);
+    color: var(--white);
+    padding: 0.5em 0;
+    margin: 1em;
+    max-width: 125px;
+
+    border: 0;
+    border-radius: 5%;
+}
+
+#invoer-akte-label:hover {
+    background-color: var(--blue);
+    box-shadow: 0 .12rem 0  var(--light-blue);
+    scale: 1.05;
+}
+
+
+
+
+/* Valid of invalid */
+
+input:user-invalid {
+	outline: .2em solid red;
+}
+
+input:user-valid {
+	outline: .2em solid limegreen;
+}
+
+#bestand {
+    display: flex;
+    align-items: center;
+}
+
+#file-input-valid {
+    display:none;
+    font-size: 2em;
+    padding-top: 0;
+}
+
+input[type="file"]:valid + #file-input-valid {
+    display: inline;
+}
+
+#file-input-invalid {
+    display:none;
+    font-size: 2em;
+    padding-top: 0;
+}
+
+input[type="file"]:invalid + #file-input-invalid {
+    display: inline;
+}
+
+/* #invoer-akte-label:user-invalid {
+    border: 2px solid red;
+}
+
+#invoer-akte-label:user-valid {
+    border: 2px solid limegreen;
+} */
+/* User invalid werkt niet voor de file input. Een oplossing zou zijn om de input gewoon de normale display te geven en niet de label te stylen,
+maar dat is lelijk en heeft niet de huisstijl van de ns. */
+
+
+/* outline ipv borders, form Jeremy */
+
+
+/*https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number*/
+
+
+/* Popovers */
+
+.huwelijks-informatie {
+  max-width: 30em;
+  /* positie popover fixen */
+
+  overflow: hidden;
+}
+
+.huwelijks-popover {
+    margin-left: 1em;
+}
+
+h3 {
+    width: 100%;
+    background-color: var(--yellow);
+
+    color: var(--blue);
+    font-weight: 150;
+    
+    padding: 0.5em ;
+    margin: 0;
+}
+
+p {
+    padding: 0.5em;
+    line-height: 1.5em;
+}
