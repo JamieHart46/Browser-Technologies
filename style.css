@@ -137,6 +137,7 @@ div label {
     display: flex;
     padding: 0;
     padding-top: 0.2em;
+    padding-bottom: 0.5em;
 }
 
 #datepicker label {
@@ -300,6 +301,16 @@ maar dat is lelijk en heeft niet de huisstijl van de ns. */
     margin-left: 1em;
 }
 
+.testament-info {
+    max-width: 30em;
+
+    overflow: hidden;
+}
+
+.testament-popover {
+    margin-left: 1em;
+}
+
 h3 {
     width: 100%;
     background-color: var(--yellow);
@@ -311,7 +322,13 @@ h3 {
     margin: 0;
 }
 
+h4 {
+    margin-bottom: .1em;
+    padding-left: 0.5em;
+}
+
 p {
     padding: 0.5em;
     line-height: 1.5em;
+    margin: 0;
 }

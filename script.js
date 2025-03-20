@@ -11,7 +11,27 @@ document.getElementById("no").addEventListener("change", function() {
 document.getElementById("partner-echtgenoot").hidden = true;
 //Met behulp van Krijn. Zorgt ervoor dat als de JS niet werkt voor welke reden dan ook, dat de vragen standaard zichtbaar zijn. 
 
+document.getElementById("kind-ja").addEventListener("change", function() {
+  document.getElementById("overledene-kinderen").hidden = false;
+});
 
+document.getElementById("kind-nee").addEventListener("change", function() {
+  document.getElementById("overledene-kinderen").hidden = true;
+});
+
+document.getElementById("overledene-kinderen").hidden = true;
+
+
+// info notaris hidden
+document.getElementById("wel-testament").addEventListener("change", function() {
+  document.getElementById("info-notaris").hidden = false;
+});
+
+document.getElementById("geen-testament").addEventListener("change", function() {
+  document.getElementById("info-notaris").hidden = true;
+});
+
+document.getElementById("info-notaris").hidden = true;
 
 
 if ('localStorage' in window && 'FormData' in window && 'querySelector' in document) {
@@ -37,6 +57,7 @@ if ('localStorage' in window && 'FormData' in window && 'querySelector' in docum
     // Sla dat laatste op in localStorage..
     localStorage['mijn-form'] = JSON.stringify(temporaryObject)
   });
+
 
   console.log(localStorage['mijn-form'])
 
@@ -74,6 +95,24 @@ if ('localStorage' in window && 'FormData' in window && 'querySelector' in docum
                 // maar als de value die eruit komt "no" is, dan blijft ie verborgen als de pagina ingeladen wordt. 
               }
 
+              if (storedData.kinderen === "yes") {
+                document.getElementById("overledene-kinderen").hidden = false;
+                
+              }
+
+              else if (storedData.notaris === "no") {
+                document.getElementById("overledene-kinderen").hidden = true;
+              }
+
+
+              if (storedData.notaris === "yes") {
+                document.getElementById("info-notaris").hidden = false;
+                
+              }
+
+              else if (storedData.notaris === "no") {
+                document.getElementById("info-notaris").hidden = true;
+              }
             }
       }
 
