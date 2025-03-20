@@ -7,66 +7,91 @@
 
 <title>Formulier erfbelasting 2025</title>
 
+
+        <div class="banner">
+            <p><strong>Let op: Dit is niet een officieel formulier, maar een schoolproject!</strong></p>
+        </div>
+        <header>
+            <img src="Afbeeldingen/Logo-geen-achtergrond.png" alt="NS-logo">
+            <h1>Aangifte 2025 erfbelasting</h1>
+        </header>
+
 <body>
-    <div class="banner">
-        <p><strong>Let op: Dit is niet een officieel formulier, maar een schoolproject!</strong></p>
-    </div>
-    <header>
-        <img src="Afbeeldingen/Logo-geen-achtergrond.png" alt="NS-logo">
-        <h1>Aangifte 2025 erfbelasting</h1>
-    </header>
+        
+    <main>
 
-<main>
+       <form action=""> 
+            <fieldset>
+                <legend>Gegevens van overledene</legend>
 
-    <form action=""> 
-    <fieldset>
-        <legend>Gegevens van overledene</legend>
+                    <label><span>Voornaam</span>
+                    <input type="text" required name="voornaam" placeholder="Bijv. Jan"></label>
+                    <label><span>Tussenvoegsel</span>
+                    <input type="text" name="tussenvoegsel" placeholder="Bijv. van of de"></label>
+                    <label><span>Achternaam</span>
+                    <input type="text" required name="achternaam" placeholder="Bijv. Bakker"></label>
+                    <label><span>Burgerservicenummer</span>
+                    <input type="number" placeholder="8 of 9 getallen" min="10000000" max="999999999" required name="Burgerservicenummer" inputmode="numeric"></label>
+                    <label><span>Overlijdingsdatum</span>
+                        <div id="datepicker">
+                            <label><input type="number" inputmode="numeric" placeholder="DD"  max="31" name="dag" required></label>
+                            <label><input type="number" inputmode="numeric" placeholder="MM"  max="12" name="maand" required></label>
+                            <label><input type="number" inputmode="numeric" placeholder="JJJJ" min="1950" max="2025" name="jaar" required></label>
+                        </div>
+                    </label>
+                    <!-- Min= en max= van chatgpt -->
+        
+                <label><span>Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van overlijden?</span></label>
 
-            <label><span>Voorletters</span>
-            <input type="text" required></label>
-            <label><span>Tussenvoegsel</span>
-            <input type="text" placeholder="Optioneel"></label>
-            <label><span>Achternaam</span>
-            <input type="text" required></label>
-            <label><span>Burgerservicenummer(BSN)</span>
-            <input type="number" min="10000000" max="999999999" required inputmode="numeric"></label>
-            <label><span>Overlijdingsdatum</span>
-            <input type="date" required></label>
-<!-- Min= en max= van chatgpt -->
-  
-        <label><span>Was de overledene getrouwd of had de overledene een geregistreerd partner op het moment van overlijden?</span></label>
+                <div id="radio-button">
+                    <label><input type="radio" name="partner" id="yes" value="yes" required>Ja</label>
+                    <label><input type="radio" name="partner" id="no" value="no" required>Nee</label>
+                </div>
+            </fieldset>
 
-          <div id="radio-button">
-            <label><input type="radio" name="partner" id="yes">Ja</label>
-            <label><input type="radio" name="partner" id="no">Nee</label>
-          </div>
-    </fieldset>
+            <fieldset id="partner-echtgenoot">
+                <legend>Partner of echtgenoot<button type="button" class="huwelijks-popover" popovertarget="huwelijks-voorwaarden">i</button></legend>
+                <label><span>Hadden de overledene en diens echtgenoot of
+                geregistreerd partner huwelijkse of partner schaps-
+                voorwaarden laten vastleggen in een notariële akte? Voer dan hieronder dat bestand in.</span></label>
 
-    <fieldset id="hidden">
-        <legend>Partner of echtgenoot</legend>
-        <label>Hadden de overledene en diens echtgenoot of
-        geregistreerd partner huwelijkse of partner schaps-
-        voorwaarden laten vastleggen in een notariële akte? Voer dan hieronder dat bestand in.</label>
+               <div id="bestand">
+                    <label for="invoer-akte" id="invoer-akte-label">selecteer bestand</label><input type="file" id="invoer-akte" required></label>
+                    <span id="file-input-valid">✅</span>
+                    <span id="file-input-invalid">❌</span>
+               </div>  
+       
+                <label>Hadden de overledene en diens partner een finaal
+                    verrekenbeding?</label>
 
-        <label for="invoer-akte" id="invoer-akte-label">selecteer bestand</label><input type="file" id="invoer-akte"></label>
-       </div> 
+            <div id="radio-button"> 
+                <label><input type="radio" name="voorwaarden" value="ja">Ja</label>
+                <label><input type="radio" name="voorwaarden" value="nee">Nee</label>
+            </div> 
+            </fieldset>
 
-        <label>Hadden de overledene en diens echtgenoot of
-        geregistreerd partner huwelijkse of partner schaps-
-        voorwaarden laten vastleggen in een notariële akte?</label>
+            <div>
+                <button class="submit-knop" type="submit">Volgende</button>
+            </div>
 
-       <div id="radio-button"> 
-        <label><input type="radio" name="voorwaarden">Ja</label>
-        <label><input type="radio" name="voorwaarden">Nee</label>
-       </div> 
-    </fieldset>
+       </form>
 
-    <div>
-    <button type="submit">Volgende</button>
-    </div>
-</form>
-  
-</main>
+       <div class="huwelijks-informatie" popover id="huwelijks-voorwaarden">
+       <h3>Finaal verrekenbeding</h3> 
+       <p >Was de overledene getrouwd op huwelijkse voorwaarden?
+      Of hadden de overledene en de partner een geregistreerd
+      partnerschap en hadden zij partnerschapsvoorwaarden?
+      Dan kan het zijn dat overledene en partner samen een finaal
+      verrekenbeding hebben. Dit betekent dat bij overlijden het
+      gezamenlijke vermogen verdeeld wordt op dezelfde manier
+      als wanneer ze in gemeenschap van goederen waren
+      getrouwd. Of op dezelfde manier als wanneer zij geen
+      partnerschaps voorwaarden hadden. Sommige zaken kunnen
+      buiten deze verdeling gehouden worden, zoals het vermogen
+      dat 1 van de partners al had voordat zij gingen trouwen.<p>
+        <p>klik buiten het textvak om te sluiten</p>
+      </div>
+    
     </main>
 </body>
 

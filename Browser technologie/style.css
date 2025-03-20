@@ -3,13 +3,20 @@
     --blue: #003082;     
     --light-blue: #0063D3;
     --white: #FFFFFF;
-    --background-Grey: #E6E6E9;
+    --light-grey: #E6E6E9;
+
+    --ns-font: 'nssans-regular.woff2', sans-serif;
 }
 
+
+/* accent-color in root */
+
 body {
-    background-color: var(--background-Grey);
+    background-color: var(--light-grey);
 
     margin: 0;
+
+    font-family: var(--ns-font);
 }
 
 .banner {
@@ -27,6 +34,9 @@ body {
     margin: 0;
 }
 
+
+
+
 /* Styling header */
 
 header {
@@ -34,7 +44,7 @@ header {
     align-items: center;
 
     background-color: var(--yellow);
-    max-height: fit-content;
+    min-height: 4em;
 
     color:var(--blue);
 }
@@ -51,6 +61,9 @@ img {
 
     Padding: 0.5em;
 }
+
+
+
 
 
 /* Styling inhoud & forms */
@@ -83,6 +96,8 @@ legend {
     box-sizing: border-box;
     font-size: 1.875em;
     background-color: var(--white);
+    color: var(--blue);
+
     width: 100%;
 
     padding-top: 0.25em;
@@ -91,8 +106,11 @@ legend {
 }
 
 label {
-    display: flex; /* Use flexbox to make sure the elements are aligned and take up full width */
-    flex-direction: column; /* Stack the text (span) and the input vertically */
+    display: flex; 
+    flex-direction: column; 
+
+    color: var(--blue);
+
     margin: 0; 
     font-size: 1rem;
     
@@ -101,25 +119,46 @@ label {
     padding-left: 1em;
 }
 
+span {
+    padding-top: 0.5em;
+}
+
+label label {
+    padding-top: 0.5em ;
+}
+
 div label {
     display: flex;
     flex-direction: row;
-    max-width: 2em;
+    max-width: 3em;
 }
 
-span { 
-  margin-left: 1em; 
+#datepicker {
+    display: flex;
+    padding: 0;
+    padding-top: 0.2em;
 }
+
+#datepicker label {
+    padding: 0;
+    padding-right: 1em;
+}
+
+
 
 /* Styling input & buttons */
 
 input {
     max-width: 100%;
-    padding: 0;
-    margin-left: 1em;
+    height: 2em;
+    padding-left: 0.5em;
+
+    background-color: var(--light-grey);
+    border: 0;
+
 }
 
-button {
+.submit-knop {
     display: flex;
     justify-self: center;
 
@@ -138,21 +177,32 @@ button {
 
 input[type="radio"] {
     margin: 0;
+
+    height: 1.3em;
     
 }
 
 #radio-button {
-    padding-left: 0.5em;
+    display: flex;
+    align-items: center;
+
+    padding-left: 0.25em;
+    padding-top: .5em;
+
 }
 
 form div {
    background-color: var(--white);
-   padding: 0.5em 0; 
+   padding-bottom: 0.5em; 
 
    transition: 1s;
 }
 
-button:hover {
+.submit-knop {
+    box-shadow: 0 .25rem 0 0 rgba(7, 7, 33, .15);
+}
+
+.submit-knop:hover {
     background-color: var(--blue);
     box-shadow: 0 .12rem 0  var(--light-blue);
     scale: 1.05;
@@ -168,7 +218,7 @@ button:hover {
     background-color: var(--light-blue);
     box-shadow: 0 .12rem 0  var(--blue);
     color: var(--white);
-    padding: 0.75em 0;
+    padding: 0.5em 0;
     margin: 1em;
     max-width: 125px;
 
@@ -183,14 +233,85 @@ button:hover {
 }
 
 
+
+
 /* Valid of invalid */
 
 input:user-invalid {
-	border: 2px solid red;
+	outline: .2em solid red;
 }
+
 input:user-valid {
-	border: 2px solid limegreen;
+	outline: .2em solid limegreen;
 }
+
+#bestand {
+    display: flex;
+    align-items: center;
+}
+
+#file-input-valid {
+    display:none;
+    font-size: 2em;
+    padding-top: 0;
+}
+
+input[type="file"]:valid + #file-input-valid {
+    display: inline;
+}
+
+#file-input-invalid {
+    display:none;
+    font-size: 2em;
+    padding-top: 0;
+}
+
+input[type="file"]:invalid + #file-input-invalid {
+    display: inline;
+}
+
+/* #invoer-akte-label:user-invalid {
+    border: 2px solid red;
+}
+
+#invoer-akte-label:user-valid {
+    border: 2px solid limegreen;
+} */
+/* User invalid werkt niet voor de file input. Een oplossing zou zijn om de input gewoon de normale display te geven en niet de label te stylen,
+maar dat is lelijk en heeft niet de huisstijl van de ns. */
+
+
+/* outline ipv borders, form Jeremy */
+
 
 /*https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number*/
 
+
+/* Popovers */
+
+.huwelijks-informatie {
+  max-width: 30em;
+  /* positie popover fixen */
+
+  overflow: hidden;
+}
+
+.huwelijks-popover {
+    margin-left: 1em;
+}
+
+h3 {
+    width: 100%;
+    background-color: var(--yellow);
+
+    color: var(--blue);
+    font-weight: 150;
+    
+    padding: 0.5em ;
+    margin: 0;
+}
+
+p {
+    padding: 0.5em;
+    line-height: 1.5em;
+}
